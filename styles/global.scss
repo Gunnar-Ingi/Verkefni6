@@ -1,17 +1,30 @@
 // Sækja config
 // Allir stílar fyrir "global", þ.e.a.s. type selectorar, reset etc
 
-* {
-  margin: 0;
-  padding: 0;
+
+@mixin reset{
+  $margin: 0;
+  $padding: 0;
   box-sizing: border-box;
 }
 
-body {
+* {
+  @include reset;
+}
+
+
+@mixin body-font{
   font-size: 16px;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   color: #222222;
 }
+
+body {
+ @include body-font;
+}
+
+
+
 
 a {
   color: #222222;
@@ -41,6 +54,11 @@ button:active {
   border: 1px solid #000000;
 }
 
-h1, h2, h3, h4 {
+
+@mixin header-font {
   font-family: 'Montaga', Georgia, serif;
+}
+
+h1, h2, h3, h4 {
+ @include header-font;
 }
