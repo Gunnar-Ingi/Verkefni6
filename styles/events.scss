@@ -1,23 +1,20 @@
-// Sækja config
-// Allir stílar fyrir events
+// Hérna lifa events
+@import './config';
 
 .events {
-  margin-bottom: 2rem;
+  margin-bottom: $margin-bottom;
 }
 
 .events .col {
-  margin-bottom: 2rem;
+  margin-bottom: $margin-bottom;
 }
 
 .event {
   position: relative;
-
-  width: 100%;
-  height: 100%;
+  width: $width;
+  height: $height;
   min-height: 250px;
-
   background-color: $grey;
-
   word-break: break-word;
 }
 
@@ -26,11 +23,11 @@
 }
 
 .event h3 {
-  margin-bottom: 1rem;
+  margin-bottom: $margin-bottom*0.5;
 }
 
 .event p {
-  margin-bottom: 1rem;
+  margin-bottom: $margin-bottom*0.5;
   font-style: italic;
 }
 
@@ -42,9 +39,12 @@
 .event .card {
   position: absolute;
   display: flex;
-  left: 0; right: 0; top: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   transform-style: preserve-3d;
-  transition: transform 300ms ease-in-out;
+  transition: $anim-trs;
 }
 
 .event:hover .card {
@@ -53,8 +53,8 @@
 
 .event .face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: $width;
+  height: $height;
   backface-visibility: hidden;
   padding: 0.5rem;
 }
@@ -74,8 +74,7 @@
 }
 
 .event .back {
-  height: 100%;
-
+  height: $height;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
